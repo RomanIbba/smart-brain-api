@@ -8,13 +8,16 @@ import handleRegister from './controllers/register.js';
 import handleSignIn from './controllers/signin.js';
 import handleProfileGet from './controllers/profile.js';
 import images from './controllers/image.js';
+
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
+
 const db = knex({
     client: 'pg',
     connection: {
         connectionString: process.env.DATABASE_URL, // this number represents localhost aka home
-        ssl: true,
+        ssl: true
     }
-});
+})
 
 const app = express();
 

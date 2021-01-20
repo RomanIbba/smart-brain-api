@@ -16,9 +16,6 @@
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
   },
-  // "scripts": {
-  //   "start": "nodemon server.js"
-  // },
   "author": "",
   "license": "ISC",
   "dependencies": {

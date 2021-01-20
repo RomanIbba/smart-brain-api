@@ -7,8 +7,6 @@ import knex from 'knex';
 import handleRegister from './controllers/register.js';
 import handleSignIn from './controllers/signin.js';
 import handleProfileGet from './controllers/profile.js';
-// import hanldeImage from './controllers/image.js';
-// import handleApiCall from './controllers/image.js';
 import images from './controllers/image.js';
 const db = knex({
     client: 'pg',
@@ -32,15 +30,6 @@ app.get('/profile/:id', (req, res) => { handleProfileGet(req, res, db) })
 app.put('/image', (req, res) => { images.handleImage(req, res, db) })
 app.post('/imageurl', (req, res) => { images.handleApiCall(req, res) })
 
-app.listen(3000, () => {
-    console.log('app is running');
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`app is running ON PORT ${process.env.PORT}`);
 })
-
-/*
-/ --> res = this is working
-/signin --> POST = success/ fail
-/register --> POST = user
-/profile:userId --> GET = user
-/image --> PUT --> user
-
-*/

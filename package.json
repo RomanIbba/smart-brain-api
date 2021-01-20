@@ -9,8 +9,16 @@
     "npm": "6.x"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "dev": "react-scripts start",
+    "start": "serve -s build",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
   },
+  // "scripts": {
+  //   "start": "nodemon server.js"
+  // },
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -21,7 +29,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "knex": "^0.21.16",
-    "pg": "^8.5.1"
+    "pg": "^8.5.1",
+    "serve": "^11.3.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
